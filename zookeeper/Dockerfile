@@ -11,8 +11,5 @@ RUN chmod +x /opt/zookeeper-3.4.6/*.sh
 EXPOSE 2181 2888 3888
 WORKDIR /opt/zookeeper-3.4.6
 
-ENV JMXDISABLE true
-ENV ZOOKEEPER_DIR /opt/zookeeper-3.4.6
-
 VOLUME ["/data"]
 CMD ["/opt/zookeeper-3.4.6/start.sh"]
