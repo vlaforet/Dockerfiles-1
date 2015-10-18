@@ -1,4 +1,4 @@
 FROM debian:jessie
 MAINTAINER tech@extrasme.com
 
-RUN apt-get update && apt-get install -y default-jre-headless wget tar && apt-get clean
+RUN apt-get update && apt-get install -y default-jre-headless curl wget tar && apt-get clean
