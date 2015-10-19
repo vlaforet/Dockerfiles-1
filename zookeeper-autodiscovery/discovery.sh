@@ -8,7 +8,7 @@ echo "Container ip $IP_ADDR"
 echo "Searching for peers in etcd, can take a moment"
 
 I=0
-while [ $ZK_ID = -1 ]
+while [ $ZK_ID = -1 ] || [ $ID = $MINUS_COUNT ]
 do
   
   I=$(expr $I + 1)
