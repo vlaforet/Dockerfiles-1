@@ -14,12 +14,11 @@ done
 
 IFS=$OIFS
 
-cat conf/zoo.cfg
-echo $JMXDISABLE
-
-echo "Building myid as server dsq $ZK_ID"
+echo "Building myid as server $ZK_ID"
 echo $ZK_ID > /data/myid
-echo "Starting zookeeper server $(cat /data/myid)"
+echo "Starting zookeeper server $(cat /data/myid) with $(expr $ID - 1) peer(s)"
+echo ""
+
 export JMXDISABLE=true
 
 ./bin/zkServer.sh start-foreground

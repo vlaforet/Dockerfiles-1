@@ -1,15 +1,15 @@
 FROM extrasme/openjre
 MAINTAINER tech@extrasme.com
 
-RUN wget -q -O - http://apache.mirrors.pair.com/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz | tar -xzf - -C /opt
+RUN wget -q -O - http://apache.mirrors.pair.com/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz | tar -xzf - -C / && mv /zookeeper-3.4.6 /zookeeper
 
-ADD zoo.cfg.template /opt/zookeeper-3.4.6/conf/
-ADD *.sh /opt/zookeeper-3.4.6/
+ADD zoo.cfg.template /zookeeper/conf/
+ADD *.sh /zookeeper/
 
-RUN chmod +x /opt/zookeeper-3.4.6/*.sh
+RUN chmod +x /zookeeper/*.sh
 
 EXPOSE 2181 2888 3888
-WORKDIR /opt/zookeeper-3.4.6
+WORKDIR /zookeeper
 
 VOLUME ["/data"]
-CMD ["/opt/zookeeper-3.4.6/start.sh"]
+CMD ["/zookeeper/start.sh"]
