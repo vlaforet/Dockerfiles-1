@@ -1,7 +1,7 @@
 FROM extrasme/zookeeper
 MAINTAINER tech@extrasme.com
 
-RUN apt-get update && apt-get install -y jq && apt-get clean
+RUN apk --update add jq
 
 ADD discovery.sh /zookeeper/
 RUN chmod +x /zookeeper/*.sh

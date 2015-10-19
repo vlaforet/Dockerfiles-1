@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM gliderlabs/alpine:3.2
 MAINTAINER tech@extrasme.com
 
-RUN apt-get update && apt-get install -y default-jre-headless curl wget tar && apt-get clean
+RUN apk --update add openjdk7-jre bash curl wget tar

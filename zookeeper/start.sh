@@ -21,4 +21,4 @@ echo ""
 
 export JMXDISABLE=true
 
-./bin/zkServer.sh start-foreground
+/bin/bash ./bin/zkServer.sh start-foreground
