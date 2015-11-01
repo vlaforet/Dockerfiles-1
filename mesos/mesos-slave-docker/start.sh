@@ -1,3 +1,3 @@
 #! /bin/bash
 
-mesos-slave --containerizers=docker --master=$MASTER $*
+mesos-slave $*
