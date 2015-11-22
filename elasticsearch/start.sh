@@ -1,4 +1,4 @@
 #! /bin/bash
 
-/elasticsearch/bin/elasticsearch
+/elasticsearch/bin/elasticsearch $*
 

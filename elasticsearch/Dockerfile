@@ -21,4 +21,4 @@ RUN chmod +x /elasticsearch/*.sh
 USER elasticsearch
 
 VOLUME ["/data"]
-CMD ["/elasticsearch/start.sh"]
+ENTRYPOINT ["/elasticsearch/start.sh"]
