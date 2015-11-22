@@ -8,16 +8,17 @@ RUN cd / && \
     rm -f $ELASTIC_PNAME.tar.gz && \
     mv /$ELASTIC_PNAME /elasticsearch
 
-RUN adduser -S elasticsearch
-
-USER elasticsearch
+RUN adduser -S elasticsearch && mkdir /data
 
 EXPOSE 9200 9300
 WORKDIR /elasticsearch
 
 COPY elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 COPY *.sh /elasticsearch/
+RUN chown -R elasticsearch /elasticsearch /data
 RUN chmod +x /elasticsearch/*.sh 
+
+USER elasticsearch
 
 VOLUME ["/data"]
 CMD ["/elasticsearch/start.sh"]
